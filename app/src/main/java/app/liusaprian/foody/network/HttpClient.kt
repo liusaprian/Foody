@@ -47,7 +47,7 @@ class HttpClient {
 
         val okHttpClient = builder.build()
         client = Retrofit.Builder()
-            .baseUrl("http://foodmarket-backend.buildwithangga.id/api/")
+            .baseUrl("http://xxx/api/")
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create(Helpers.getDefaultGson()))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

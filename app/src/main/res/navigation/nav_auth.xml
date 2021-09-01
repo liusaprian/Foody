@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/sign_in_fragment"
+    android:id="@+id/nav_auth">
+
+    <fragment
+        android:id="@+id/sign_in_fragment"
+        android:name="app.liusaprian.foody.ui.auth.signin.SignInFragment"
+        tools:layout="@layout/fragment_sign_in">
+
+        <action android:id="@+id/to_sign_up"
+            app:destination="@id/sign_up_fragment"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/sign_up_fragment"
+        android:name="app.liusaprian.foody.ui.auth.signup.SignUpFragment"
+        tools:layout="@layout/fragment_sign_up">
+
+        <action android:id="@+id/to_sign_up_address"
+            app:destination="@id/sign_up_address_fragment"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/sign_up_address_fragment"
+        android:name="app.liusaprian.foody.ui.auth.signup.SignUpAddressFragment"
+        tools:layout="@layout/fragment_sign_up_address">
+
+        <action android:id="@+id/to_sign_up_success"
+            app:destination="@id/sign_up_success_fragment"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/sign_up_success_fragment"
+        android:name="app.liusaprian.foody.ui.auth.signup.SignUpSuccessFragment"
+        tools:layout="@layout/fragment_sign_up_success">
+
+    </fragment>
+
+</navigation>

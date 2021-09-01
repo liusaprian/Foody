@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.detail.payment.PaymentFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/item_ordered_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@color/white"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="16dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/items_ordered_text"
+                    style="@style/TextView.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/items_ordered"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/payment_order_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/items_ordered_text"
+                    tools:itemCount="2"
+                    tools:layout_editor_absoluteX="24dp"
+                    tools:listitem="@layout/payment_item" />
+
+                <TextView
+                    android:id="@+id/detail_transaction_text"
+                    style="@style/TextView.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/detail_transaction"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/payment_order_rv"
+                    app:layout_constraintTop_toBottomOf="@+id/payment_order_rv" />
+
+                <TextView
+                    android:id="@+id/subtotal_text"
+                    style="@style/TextView.Secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/subtotal_price"
+                    app:layout_constraintStart_toStartOf="@+id/detail_transaction_text"
+                    app:layout_constraintTop_toBottomOf="@+id/detail_transaction_text" />
+
+                <TextView
+                    android:id="@+id/payment_subtotal_price"
+                    style="@style/TextView.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IDR 3.298.000"
+                    app:layout_constraintBottom_toBottomOf="@+id/subtotal_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/subtotal_text" />
+
+                <TextView
+                    android:id="@+id/driver_text"
+                    style="@style/TextView.Secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/driver"
+                    app:layout_constraintStart_toStartOf="@+id/subtotal_text"
+                    app:layout_constraintTop_toBottomOf="@+id/subtotal_text" />
+
+                <TextView
+                    android:id="@+id/payment_driver_fee"
+                    style="@style/TextView.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IDR 14.000"
+                    app:layout_constraintBottom_toBottomOf="@+id/driver_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/driver_text" />
+
+                <TextView
+                    android:id="@+id/tax_text"
+                    style="@style/TextView.Secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Tax 10%"
+                    app:layout_constraintStart_toStartOf="@+id/driver_text"
+                    app:layout_constraintTop_toBottomOf="@+id/driver_text" />
+
+                <TextView
+                    android:id="@+id/payment_tax"
+                    style="@style/TextView.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IDR 32.980"
+                    app:layout_constraintBottom_toBottomOf="@+id/tax_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tax_text" />
+
+                <TextView
+                    android:id="@+id/total_price_text"
+                    style="@style/TextView.Secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/total_price"
+                    app:layout_constraintStart_toStartOf="@+id/tax_text"
+                    app:layout_constraintTop_toBottomOf="@+id/tax_text" />
+
+                <TextView
+                    android:id="@+id/payment_total_price"
+                    style="@style/TextView.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IDR 3.430.980"
+                    android:textColor="@color/green"
+                    app:layout_constraintBottom_toBottomOf="@+id/total_price_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/total_price_text" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/payment_deliver_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/item_ordered_layout">
+
+                <TextView
+                    android:id="@+id/deliver_to_text"
+                    style="@style/TextView.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/deliver_to"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/name_text"
+                    style="@style/TextView.Secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/name"
+                    app:layout_constraintStart_toStartOf="@+id/deliver_to_text"
+                    app:layout_constraintTop_toBottomOf="@+id/deliver_to_text" />
+
+                <TextView
+                    android:id="@+id/payment_name"
+                    style="@style/TextView.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lius Aprian"
+                    app:layout_constraintBottom_toBottomOf="@+id/name_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/name_text" />
+
+                <TextView
+                    android:id="@+id/phone_text"
+                    style="@style/TextView.Secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/phone_no"
+                    app:layout_constraintStart_toStartOf="@+id/name_text"
+                    app:layout_constraintTop_toBottomOf="@+id/name_text" />
+
+                <TextView
+                    android:id="@+id/payment_phone"
+                    style="@style/TextView.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+62 812 1231 2312"
+                    app:layout_constraintBottom_toBottomOf="@+id/phone_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/phone_text" />
+
+                <TextView
+                    android:id="@+id/address_text"
+                    style="@style/TextView.Secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/address"
+                    app:layout_constraintStart_toStartOf="@+id/phone_text"
+                    app:layout_constraintTop_toBottomOf="@+id/phone_text" />
+
+                <TextView
+                    android:id="@+id/payment_address"
+                    style="@style/TextView.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Setra Duta Palima"
+                    app:layout_constraintBottom_toBottomOf="@+id/address_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/address_text" />
+
+                <TextView
+                    android:id="@+id/house_text"
+                    style="@style/TextView.Secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/house_no"
+                    app:layout_constraintStart_toStartOf="@+id/address_text"
+                    app:layout_constraintTop_toBottomOf="@+id/address_text" />
+
+                <TextView
+                    android:id="@+id/payment_house"
+                    style="@style/TextView.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A5 Hook"
+                    app:layout_constraintBottom_toBottomOf="@+id/house_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/house_text" />
+
+                <TextView
+                    android:id="@+id/city_text"
+                    style="@style/TextView.Secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/city"
+                    app:layout_constraintStart_toStartOf="@+id/house_text"
+                    app:layout_constraintTop_toBottomOf="@+id/house_text" />
+
+                <TextView
+                    android:id="@+id/payment_city"
+                    style="@style/TextView.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jakarta"
+                    app:layout_constraintBottom_toBottomOf="@+id/city_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/city_text" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/checkout_btn"
+        style="@style/Button.Primary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/checkout_now"
+        android:layout_margin="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

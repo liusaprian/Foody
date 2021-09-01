@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    tools:context=".ui.auth.signin.SignInFragment">
+
+    <TextView
+        android:id="@+id/email_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextView.Primary"
+        android:text="@string/email_address"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/email_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextView.Secondary"
+        android:layout_marginTop="8dp"
+        android:padding="12dp"
+        android:background="@drawable/shape_rectangle_outline_black"
+        android:hint="@string/type_your_email_address"
+        app:layout_constraintTop_toBottomOf="@+id/email_tv" />
+
+    <TextView
+        android:id="@+id/pass_tv"
+        style="@style/TextView.Primary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/password"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/email_et" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/pass_et"
+        style="@style/TextView.Secondary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:padding="12dp"
+        android:inputType="textPassword"
+        android:background="@drawable/shape_rectangle_outline_black"
+        android:hint="@string/type_your_password"
+        app:layout_constraintTop_toBottomOf="@+id/pass_tv" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sign_in_btn"
+        style="@style/Button.Primary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/sign_in"
+        app:layout_constraintTop_toBottomOf="@+id/pass_et" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/create_new_account_btn"
+        style="@style/Button.Secondary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/create_new_account"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/sign_in_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

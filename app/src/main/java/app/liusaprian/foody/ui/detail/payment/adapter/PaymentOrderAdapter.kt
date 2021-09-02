@@ -3,6 +3,7 @@ package app.liusaprian.foody.ui.detail.payment.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import app.liusaprian.foody.R
 import app.liusaprian.foody.databinding.PaymentItemBinding
 import app.liusaprian.foody.model.Order
 import com.bumptech.glide.Glide
@@ -30,7 +31,7 @@ class PaymentOrderAdapter (
                         .into(paymentFoodImage)
                     paymentFoodName.text = order.food.name
                     paymentFoodPrice.text = order.food.price.toString()
-                    paymentFoodQuantity.text = order.quantity.toString()
+                    paymentFoodQuantity.text = resources.getString(R.string.payment_qty, order.quantity)
                 }
             }
         }

@@ -13,7 +13,6 @@
         android:background="@color/white"
         android:paddingVertical="8dp"
         android:paddingHorizontal="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/order_item"/>
 

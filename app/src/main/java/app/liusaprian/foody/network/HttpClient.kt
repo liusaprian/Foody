@@ -1,6 +1,6 @@
 package app.liusaprian.foody.network
 
-import androidx.viewbinding.BuildConfig
+import app.liusaprian.foody.BuildConfig
 import app.liusaprian.foody.Foody
 import app.liusaprian.foody.utils.Helpers
 import okhttp3.Interceptor
@@ -47,7 +47,7 @@ class HttpClient {
 
         val okHttpClient = builder.build()
         client = Retrofit.Builder()
-            .baseUrl("http://xxx/api/")
+            .baseUrl("${BuildConfig.BASE_URL}api/")
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create(Helpers.getDefaultGson()))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
